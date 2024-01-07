@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dawal Lake View</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Sidebar/menu -->
+    <nav
+      class="w3-sidebar w3-light-green w3-collapse w3-top w3-large w3-padding"
+      style="z-index: 3; width: 300px; font-weight: bold"
+      id="mySidebar"
+    >
+      <br />
+      <a
+        href="javascript:void(0)"
+        onclick="w3_close()"
+        class="w3-button w3-hide-large w3-display-topleft"
+        style="width: 100%; font-size: 22px"
+        >Close Menu</a
+      >
+      <div class="w3-container">
+        <h3 class="w3-padding-64">
+          <!-- <b>Dawal<br />Lake View<br />Resort</b> -->
+          <img src="./assets/dawal lakeview logo.png" alt="" height="100px" />
+        </h3>
+      </div>
+      <div class="w3-bar-block">
+        <a
+          href="#"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-round w3-hover-text-deep-orange"
+          >Home</a
+        >
+        <a
+          href="#services"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-round w3-hover-text-deep-orange"
+          >Services</a
+        >
+        <a
+          href="#packages"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-round w3-hover-text-deep-orange"
+          >Room Packages & Prices</a
+        >
+        <a
+          href="#contact"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-round w3-hover-text-deep-orange"
+          >Contact</a
+        >
+      </div>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header
+      class="w3-container w3-top w3-hide-large w3-light-green w3-xlarge w3-padding"
+    >
+      <a
+        href="javascript:void(0)"
+        class="w3-button w3-text-white w3-margin-right"
+        onclick="w3_open()"
+        >☰</a
+      >
+      <span class="w3-text-white">Dawal Lake View</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div
+      class="w3-overlay w3-hide-large"
+      onclick="w3_close()"
+      style="cursor: pointer"
+      title="close side menu"
+      id="myOverlay"
+    ></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left: 340px; margin-right: 40px">
+      <!-- Header -->
+      <div class="w3-container" style="margin-top: 60px" id="#">
+        <h1 class="w3-jumbo"><b>Welcome To</b></h1>
+        <h1 class="w3-xxxlarge w3-text-green"><b>Dawal Lake View Resort</b></h1>
+        <hr style="width: 50px; border: 5px solid #ef592c" class="w3-round" />
+      </div>
+
+      <!-- Photo grid (modal) -->
+      <div class="w3-row-padding">
+        <div class="w3-half">
+          <img
+            src="/assets/front gate.jpg"
+            style="width: 100%"
+            onclick="onClick(this)"
+            alt="Dawal Lake View Entrance"
+          />
+          <img
+            src="./assets/floating way.jpg"
+            style="width: 100%"
+            onclick="onClick(this)"
+            alt="Dawal Lake View Floating Deck"
+          />
+          <img
+            src="./assets/lake view.jpg"
+            style="width: 100%"
+            onclick="onClick(this)"
+            alt="Dawal Lake View Deck"
+          />
+        </div>
+
+        <div class="w3-half">
+          <img
+            src="./assets/main hall.jpg"
+            style="width: 100%"
+            onclick="onClick(this)"
+            alt="Dawal Lake View Main Hall"
+          />
+          <img
+            src="./assets/cabin 2.jpg"
+            style="width: 100%"
+            onclick="onClick(this)"
+            alt="Dawal Lake View Cabins"
+          />
+          <img
+            src="./assets/pool 2.jpg"
+            style="width: 100%"
+            onclick="onClick(this)"
+            alt="Dawal Lake View Swimming Pool"
+          />
+        </div>
+      </div>
+
+      <!-- Modal for full size images on click-->
+      <div
+        id="modal01"
+        class="w3-modal w3-black"
+        style="padding-top: 0"
+        onclick="this.style.display='none'"
+      >
+        <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+        <div
+          class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64"
+        >
+          <img id="img01" class="w3-image" />
+          <p id="caption"></p>
+        </div>
+      </div>
+
+      <!-- Services -->
+
+      <div class="w3-container" id="services" style="margin-top: 75px">
+        <h1 class="w3-xxxlarge w3-text-green"><b>Services</b></h1>
+        <hr style="width: 50px; border: 5px solid #ef592c" class="w3-round" />
+        <p>Dawal Lake View Resort</p>
+        <p>
+          Experience a luxurious lakeside retreat with elegant accommodation,
+          diverse dining options, thrilling activities, event facilities, and
+          exceptional services at Dawal Lake View Resort.
+        </p>
+      </div>
+
+      <!-- offer -->
+      <div class="w3-row-padding">
+        <div class="w3-col m3 w3-margin-bottom">
+          <div class="w3-pale-green">
+            <img
+              src="./assets/mini villa cabin.jpg"
+              alt="accommodation"
+              style="width: 100%"
+            />
+            <div class="w3-container">
+              <h3>Luxurious Accommodation</h3>
+              <p>
+                Elegant rooms, suites, and cottages with stunning views of Dawal
+                Lake.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col m3 w3-margin-bottom">
+          <div class="w3-light-grey">
+            <img
+              src="./assets/floating area.jpg"
+              alt="Leisure Activities"
+              style="width: 100%"
+            />
+            <div class="w3-container">
+              <h3>Leisure Activities</h3>
+              <p>
+                Boating, water sports, nature walks, indoor games, swimming
+                pool, and spa treatments.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col m3 w3-margin-bottom">
+          <div class="w3-pale-green">
+            <img src="./assets/view deck.jpg" alt="Mike" style="width: 100%" />
+            <div class="w3-container">
+              <h3>Diverse Dining Options</h3>
+              <p>
+                Lakefront restaurant, outdoor dining, and a bar/lounge serving
+                local and international cuisine.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col m3 w3-margin-bottom">
+          <div class="w3-light-grey">
+            <img
+              src="./assets/night main hall.jpg"
+              alt="Mike"
+              style="width: 100%"
+            />
+            <div class="w3-container">
+              <h3>Convenience Services</h3>
+              <p>
+                24/7 front desk, concierge assistance, Wi-Fi access, and ample
+                parking facilities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Packages / Pricing Tables -->
+      <div class="w3-container" id="packages" style="margin-top: 50px">
+        <h1 class="w3-xxxlarge w3-text-green"><b>Room Packages & Prices</b></h1>
+        <hr style="width: 50px; border: 5px solid #ef592c" class="w3-round" />
+        <p>
+            Discover a range of tailored experiences, from lakeside retreats and romantic hideaways to family-friendly cabins and customizable event packages, ensuring unforgettable moments at Dawal Lake View Resort.
+        </p>
+      </div>
+
+      <div class="w3-row-padding">
+        <div class="w3-col m4 w3-margin-bottom">
+          <ul class="w3-ul w3-pale-green w3-center">
+            <li class="w3-xlarge w3-padding-24">
+              <img src="./assets/cabin 4.jpg" alt="" height="150px" />
+              <h3>LakeSide Cabin</h3>
+            </li>
+            <li class="w3-padding-16">Accommodation for 2 Adults</li>
+            <li class="w3-padding-16">Private deck overlooking Dawal Lake</li>
+            <li class="w3-padding-16">
+              Breakfast served in-cabin or at the restaurant
+            </li>
+            <li class="w3-padding-16">
+              <h2>₱ 2500</h2>
+              <span class="w3-opacity">Per Cabin</span>
+            </li>
+            <li class="w3-light-grey w3-padding-24">
+                <a
+                 href="javascript:void(
+                    window.open(
+                       'https://form.jotform.com/240062056914450',
+                       'blank',
+                       'scrollbars=yes,
+                       toolbar=no,
+                       width=700,
+                       height=500'
+                       )
+                       )
+                       ">
+                       <button
+                         class="w3-button w3-green w3-padding-large w3-hover-deep-orange w3-hover-text-black"
+                       >
+                           Book Now
+                       </button>
+                </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="w3-col m4 w3-margin-bottom">
+          <ul class="w3-ul w3-pale-green w3-center">
+            <li class="w3-xlarge w3-padding-24">
+              <img src="./assets/cabin 4.jpg" alt="" height="150px" />
+              <h3>Lake Side Cabin</h3>
+            </li>
+            <li class="w3-padding-16">Accommodation for 2 Adults</li>
+            <li class="w3-padding-16">Private deck overlooking Dawal Lake</li>
+            <li class="w3-padding-16">
+              Breakfast served in-cabin or at the restaurant
+            </li>
+            <li class="w3-padding-16">
+              <h2>₱ 2500</h2>
+              <span class="w3-opacity">Per Cabin</span>
+            </li>
+            <li class="w3-light-grey w3-padding-24">
+                <a
+                 href="javascript:void(
+                    window.open(
+                        'https://form.jotform.com/240062056914450',
+                        'blank',
+                        'scrollbars=yes,
+                        toolbar=no,
+                        width=700,
+                        height=500'
+                        )
+                        )
+                        ">
+                        <button
+                          class="w3-button w3-green w3-padding-large w3-hover-deep-orange w3-hover-text-black"
+                        >
+                            Book Now
+                        </button>
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- testimonials -->
+      <div class="w3-container" id="packages" style="margin-top: 5px">
+        <h1 class="w3-xxxlarge w3-text-green"><b>People Says</b></h1>
+        <hr style="width: 50px; border: 5px solid #ef592c" class="w3-round" />
+      </div>
+
+      <div class="slideshow-container w3-round">
+
+        <div class="mySlides">
+          <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae neque placeat aspernatur dicta quasi fugit alias ab. Nihil, ea repellat.</q>
+          <p class="author">- Lorem, ipsum.</p>
+        </div>
+        
+        <div class="mySlides">
+          <q>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, tempora.</q>
+          <p class="author">- Lorem, ipsum.</p>
+        </div>
+        
+        <div class="mySlides">
+          <q>Lorem ipsum dolor sit amet.</q>
+          <p class="author">- Lorem, ipsum.</p>
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        </div>
+        
+        <div class="dot-container">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+
+      
+      <!-- Contact -->
+      <div class="w3-container" id="contact" style="margin-top: 75px">
+        <h1 class="w3-xxxlarge w3-text-green"><b>Contact</b></h1>
+        <hr style="width: 50px; border: 5px solid #ef592c" class="w3-round" />
+        <p>
+            Reach out to our dedicated team at Dawal Lake View Resort, and let us assist in curating your perfect lakeside experience.
+        </p>
+        <div class="w3-row-padding">
+            <h2>Dawal Lake View Resort Map</h2>
+            <div class="w3-half w3-margin-bottom">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3841.5071444044083!2d119.93326887417123!3d15.6712120499721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33940f3778d08d0f%3A0xa1ea3917edc306e5!2sDawal%20Lake!5e0!3m2!1sen!2sph!4v1704646199543!5m2!1sen!2sph" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="w3-half">
+                <h2>Contact Us</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg>
+                <a class="w3-text-green" href="mailto:dawalreservations@gmail.com">dawalreservations@gmail.com</a>
+                
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+                    0916 455 5370
+                </p>
+
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+                    0919 573 0952
+                </p>
+                
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg>
+                    24/7 Customer Service
+                </p>
+                
+            </div>
+      </div>
+
+      <!-- End page content -->
+    </div>
+
+    <!-- W3.CSS Container -->
+    <footer
+      class="w3-light-grey w3-container w3-padding-32"
+      style="margin-top: 5px; padding-right: 58px"
+    >
+      <p class="w3-center">Dawal Lake View Resort © 2024 | All rights Reserved</p>
+    </footer>
+
+    <script>
+        // Script to open and close sidebar
+        function w3_open() {
+          document.getElementById("mySidebar").style.display = "block";
+          document.getElementById("myOverlay").style.display = "block";
+        }
+    
+        function w3_close() {
+          document.getElementById("mySidebar").style.display = "none";
+          document.getElementById("myOverlay").style.display = "none";
+        }
+    
+        // Modal Image Gallery
+        function onClick(element) {
+          document.getElementById("img01").src = element.src;
+          document.getElementById("modal01").style.display = "block";
+          var captionText = document.getElementById("caption");
+          captionText.innerHTML = element.alt;
+        }
+    
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+
+
+      </script>
+
+  </body>
+  
+</html>
